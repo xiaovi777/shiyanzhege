@@ -1,0 +1,196 @@
+/* 角色列表状态指示器 */
+.contact-status-indicator {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    z-index: 10;
+}
+
+/* 已拉黑状态 - 红色 */
+.contact-status-indicator.blocked {
+    background-color: #ff4444;
+    color: white;
+}
+
+/* 被拉黑状态 - 深橙色 */
+.contact-status-indicator.blocked-by {
+    background-color: #ff8800;
+    color: white;
+}
+
+/* 已屏蔽群聊状态 - 橙色 */
+.contact-status-indicator.muted {
+    background-color: #ff9500;
+    color: white;
+}
+
+/* 确保角色项有相对定位 */
+.contact-item {
+    position: relative;
+}
+
+/* 足迹新增高亮样式 */
+.footprint-item.new-footprint {
+    animation: slideInFromTop 0.5s ease-out;
+}
+
+.footprint-item.highlight-new {
+    background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+    border-left: 4px solid #2196f3;
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.2);
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+.footprint-mood {
+    color: #e91e63;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 消息列表状态指示器样式 */
+.message-avatar-container {
+    position: relative;
+    display: inline-block;
+}
+
+.message-status-indicator {
+    position: absolute;
+    right: 2px;
+    bottom: 1px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    z-index: 10;
+}
+
+/* 已拉黑状态 - 红色 */
+.message-status-indicator.blocked {
+    background-color: #ff4444;
+    color: white;
+}
+
+/* 被拉黑状态 - 深橙色 */
+.message-status-indicator.blocked-by {
+    background-color: #ff8800;
+    color: white;
+}
+
+/* 已屏蔽群聊状态 - 橙色 */
+.message-status-indicator.muted {
+    background-color: #ff9500;
+    color: white;
+}
+
+/* 未读消息提示样式 */
+.unread-badge {
+    position: absolute;
+    right: -2px;
+    top: -2px;
+    min-width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #ff4444;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+    z-index: 15;
+    padding: 0 4px;
+    box-sizing: border-box;
+}
+
+/* 当数字超过99时，显示99+ */
+.unread-badge.large-count {
+    font-size: 8px;
+    min-width: 20px;
+    border-radius: 10px;
+}
+
+/* 危险操作样式 */
+.danger-item {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.danger-item:hover {
+    background-color: rgba(255, 59, 48, 0.05);
+}
+
+.danger-color {
+    color: #ff3b30 !important;
+}
+
+.danger-section-title {
+    color: #ff3b30 !important;
+}
+
+.danger-section-icon {
+    color: #ff3b30 !important;
+}
+
+/* 消息列表多选模式按钮 - 放在app-header中 */
+.chat-header-multiselect-actions {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+/* 置顶对话的视觉标识 - 主题化颜色 */
+.message-item.pinned {
+    background: rgba(74, 132, 193, 0.08);
+    border-left: 3px solid rgba(74, 132, 193, 0.3);
+}
+
+/* 可爱主题下的置顶对话样式 */
+body[data-theme="cute"] .message-item.pinned {
+    background: rgba(255, 182, 193, 0.08);
+    border-left: 3px solid rgba(255, 182, 193, 0.3);
+}
+
+.pin-indicator {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #ffd700;
+    font-size: 12px;
+    z-index: 5;
+}
+
+/* 游戏选择模态框样式 - 毛玻璃风格莫兰迪色系 */
+.game-modal-content {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    width: 85%;
+    max-height: 70vh;
+}
